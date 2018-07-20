@@ -24,7 +24,7 @@ namespace FCatalog.Models
             Reviews = new List<Review>();
         }
 
-
+       
 
 
     }

@@ -121,18 +121,28 @@ namespace FCatalog.Controllers
         //    return View();
         //}
 
-        //[HttpGet]
+        //[HttpPost]
         //[Authorize]
         //public ActionResult Favourite(int id)
         //{
         //    ViewBag.Message = "Избранное";
 
-        //    ViewBag.Film = id;
-        //    ViewBag.UserId = User.Identity.GetUserId();
+            
 
+        //    using (ApplicationDbContext db = new ApplicationDbContext())
+        //    {
 
-        //    return View();
+        //        db.Favourites.Add(new Favourite { UserId = User.Identity.GetUserId(), FilmId = id });
+               
+        //        db.SaveChanges();
+        //    }
+        //    return View("Index");
         //}
+
+
+
+
+
 
         //[HttpPost]
         //[Authorize]
@@ -174,7 +184,7 @@ namespace FCatalog.Controllers
             {
                 ViewBag.Message = "Ничего не найдено :(";
             }
-            return PartialView(actors);
+            return View(actors);
         }
 
         [HttpPost]
@@ -185,7 +195,7 @@ namespace FCatalog.Controllers
             {
                 ViewBag.Message = "Ничего не найдено :(";
             }
-            return PartialView(producers);
+            return View(producers);
         }
 
 
