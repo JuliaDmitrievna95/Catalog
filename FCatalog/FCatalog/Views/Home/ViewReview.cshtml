@@ -1,0 +1,36 @@
+﻿
+
+@using FCatalog.Models
+@model FCatalog.Models.Film
+
+<h2>Все отзывы о фильме</h2>
+
+
+
+@{
+    ViewBag.Title = "Отзывы о фильме " + @Model.Name;
+
+}
+
+<div>
+
+    <hr />
+    <dl>
+
+
+
+
+        <dt>Отзывы</dt>
+
+        <dd>
+            <ul>
+                @foreach (Review review in Model.Reviews)
+                {
+                    <li>@review.Person <br>@review.Date <br> @review.Text </li>
+
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+@Html.ActionLink("Назад", "Details", "Home", new { id = ViewBag.Id })
