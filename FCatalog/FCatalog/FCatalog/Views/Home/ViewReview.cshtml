@@ -1,0 +1,31 @@
+﻿
+@using FCatalog.Models
+@model FCatalog.Models.Film
+
+
+<div class="panel panel-default" style="background-color: rgba(0, 0, 0, 0.5); width: 1000px; height: 500px;">
+    <div class="panel-body">
+        <h4 style="color:white;">Рецензии на фильм @Model.Name</h4><br>
+
+        @foreach (Review review in Model.Reviews)
+        {
+            <p style="color:white;">Имя: @review.Person  &nbsp&nbspДата: @review.Date</p>
+            <p style="color:darkgray;"> Рецензия:<br> @review.Text </p>
+
+
+        }
+
+    </div>
+
+
+    
+
+
+</div>
+<a href="/Home/Details/@Model.Id" class="btn btn-danger rounded" style=" background-color: rgba(0, 0, 0, 0.7); ">Назад</a>
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>

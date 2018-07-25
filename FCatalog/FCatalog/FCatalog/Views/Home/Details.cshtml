@@ -1,0 +1,40 @@
+﻿@model FCatalog.Models.Film
+<p></p>
+<div class="panel panel-default" style="background-color: rgba(0, 0, 0, 0.5); width: 1200px; height: 600px;">
+    <div class="panel-body">
+ 
+        <img src="@Url.Content("~/Pictures/" + @Path.GetFileName(Model.Image))" class="img-fluid" align="left" width="32%" style=" margin: 10px 10px 10px 0;">
+        <h3 style="color:white;">@Model.Name</h3>
+        <h5 style="color:white;">@Model.LastName </h5> <br>
+        <p style="color:darkgray;">
+            Продюссер: @Model.Producer<br>
+            Год: @Model.Year<br>
+            Жанр: @Model.Genre<br>
+            В ролях : @Model.Roles<br><br>
+        </p>
+        <h5 style="color:white;"> Описание: </h5><br>
+        <p style="color:darkgray;">
+            @Model.Description
+
+        </p>
+
+        <div class="btn-group pull-right" role="group" aria-label="Basic example" align="right">
+            <a href="/Home/EditReview/@Model.Id" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5); ">Оставить рецензию</a>
+            <a href="/Home/ViewReview/@Model.Id" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5); ">Посмотреть все рецензии</a>
+            <a href="/Home/Favourite/@Model.Id" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5); ">Добавить в избранное</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>

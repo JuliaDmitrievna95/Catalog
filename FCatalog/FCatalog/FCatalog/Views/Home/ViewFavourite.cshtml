@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FCatalog.Models.Favourite>
+
+
+<p></p>
+<h2 style=" color:white;" >&nbsp&nbspИзбранное</h2>
+
+
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        if (item.UserId == ViewBag.Current)
+        {
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 rounded">
+                <div class="card text-center " style="width: 270px; background-color: rgba(0, 0, 0, 0.6); ">
+
+                    <h5 class="card-header" style="height: 60px;  color:white; background-color: rgba(51, 0, 34, 0.3);"> @item.Film.Name</h5>
+
+                    <!-- Изображение -->
+                    <img src="@Url.Content("~/Pictures/" + @Path.GetFileName(item.Film.Image))" width="200" height="300" aling="center" class="img-rounded" />
+                    <!-- Текстовый контент -->
+                    <div class="card-body">
+                        <p></p>
+                    </div>
+                    <!-- Список List groups -->
+
+
+                    <p style="color:white;">
+                        Продюссер: @Html.DisplayFor(modelItem => item.Film.Producer)<br>
+                        Год: @Html.DisplayFor(modelItem => item.Film.Year)<br>
+                        Жанр: @Html.DisplayFor(modelItem => item.Film.Genre)
+                    </p>
+
+
+                    <!-- Текстовый контент -->
+                    <div class="card-body">
+                        <p></p>
+                        <a href="/Home/Details/@item.Film.Id" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5);  margin: 10px 10px 10px 0;">Подробнее</a>
+                        <a href="/Home/Delete/@item.Id" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5); ">Удалить</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+        
+        }
+    }
+
+</table>

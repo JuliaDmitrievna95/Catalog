@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FCatalog.Models.Film>
+
+<p></p>
+<h3 style="color:white;">Результаты поиска по режиссеру</h3><br>
+
+<table class="table  table-hover table-striped " border-collapse="collapse" style="  background-color: rgba(0, 0, 0, 0.6); color:darkgray;">
+    <tr>
+        <th style="padding: 15px;">
+            Фильм
+        </th>
+        <th style="padding: 15px;">
+
+        </th>
+        <th style="padding: 15px;">
+            Продюссер
+        </th>
+        <th style="padding: 15px;">
+            Год
+        </th>
+        <th style="padding: 15px;">
+            Жанр
+        </th>
+      
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+         
+            <td>
+
+                @Html.ActionLink("Подробнее>>", "Details", new { id = item.Id })
+
+            </td>
+        </tr>
+    }
+</table>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+

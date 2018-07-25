@@ -1,0 +1,36 @@
+﻿@using FCatalog.Models
+@model FCatalog.Models.Review
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+
+<div class="panel panel-default" style="background-color: rgba(0, 0, 0, 0.5); width: 1000px; height: 550px;">
+    <div class="panel-body">
+        <h4 style="color:white;"> Оставьте рецензию на фильм</h4>
+
+        <form method="post" action="/Home/EditReview">
+
+            <p style="color:darkgray;">Имя</p>
+            <input class="form-control" name="Person"><br>
+
+            <p style="color:darkgray;">Рецензия</p>
+            <textarea class="form-control" rows="10" name="Text"></textarea>
+            <br>
+
+            <input type="hidden" value="@ViewBag.Date" name="Date" />
+            <input type="hidden" value="@ViewBag.FilmId" name="FilmId" />
+            <input type="hidden" value="@ViewBag.FilmId" name="@ViewBag.FilmId" />
+            <input type="submit" value="Оставить рецензию" class="btn btn-danger" style=" background-color: rgba(207, 34, 100, 0.5); " />
+
+        </form>
+
+     
+
+    </div>
+</div>
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
